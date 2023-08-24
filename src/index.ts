@@ -1,6 +1,7 @@
 import express, { Application, Request, Response } from 'express';
 import helmet from 'helmet';
 import cors from 'cors';
+import morgan from 'morgan';
 import routes from './routes';
 import Config from './config';
 
@@ -13,6 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.enable('trust proxy');
 app.use(helmet());
+app.use(morgan('dev'));
 app.use(cors());
 
 
@@ -25,7 +27,6 @@ app.get(`/`, (req: Request, res: Response) => {
         message: 'Risevest Backend' 
     });
 });
-
 
 app.all('*', (req: Request, res: Response) => {
     res.status(406).json({

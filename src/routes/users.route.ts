@@ -10,4 +10,9 @@ router.get(
   UsersController.listUsers
 );
 
+router.post(
+  '/users',
+  UsersController.addUser
+);
+
 export default router;

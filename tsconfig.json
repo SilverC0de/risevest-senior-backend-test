@@ -12,6 +12,6 @@
     "strictPropertyInitialization": false,
     "noImplicitAny": true
   },
-  "exclude": ["node_modules", "./migrations"],
-  "typeRoots": ["./src/@typings/express", "./node_modules/@types"]
+  "exclude": ["node_modules"],
+  "typeRoots": ["./node_modules/@types"]
 }

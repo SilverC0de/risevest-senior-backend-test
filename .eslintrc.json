@@ -6,7 +6,9 @@
   },
   "extends": ["airbnb-base", "prettier"],
   "parserOptions": {
-    "ecmaVersion": "latest"
+    "ecmaVersion": "latest",
+    "sourceType" : "module",
+    "project": "./tsconfig.json"
   },
   "rules": {
     "dot-notation": 0,

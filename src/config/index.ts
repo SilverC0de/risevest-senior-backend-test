@@ -6,9 +6,7 @@ interface IConfig {
     readonly VERSION: number | any | undefined;
   };
   DB: {
-    readonly DB_TYPE: string | any | undefined;
-    readonly SECRET_KEY: string | undefined;
-    readonly MAILGUN: string | undefined;
+    readonly POSTGRES: string | any | undefined;
   };
   KEY: {
     readonly SECRET_KEY: string | undefined;
@@ -22,9 +20,7 @@ const config: IConfig = {
     VERSION: process.env.VERSION,
   },
   DB: {
-    DB_TYPE: process.env.DB_TYPE,
-    SECRET_KEY: process.env.DB_TYPE,
-    MAILGUN: process.env.DB_TYPE,
+    POSTGRES: process.env.POSTGRES
   },
   KEY: {
     SECRET_KEY: process.env.SECRET_KEY,
