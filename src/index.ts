@@ -22,15 +22,16 @@ app.use(`/${appVersion}`, routes);
 
 
 app.get(`/`, (req: Request, res: Response) => {
-
     res.status(200).json({ 
-        message: 'Risevest Backend' 
+        message: 'Risevest Devtest',
+        data: null 
     });
 });
 
 app.all('*', (req: Request, res: Response) => {
     res.status(406).json({
-        message: 'Invalid route'
+        message: 'Invalid route',
+        data: null
     });
 });
 
