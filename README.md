@@ -27,14 +27,14 @@ LIMIT 3;
 - If i am to get the top 3 users by number of posts each users posted, and their latest comment, i would do something like this
 
 ```sql
-SELECT U.id as user_id, U.email, U.name, COUNT(P.id) AS post_count, C.comment AS recent_comment 
+SELECT U.id as user_id, U.name, COUNT(P.id) AS post_count, C.content AS recent_comment 
 FROM users U 
 LEFT JOIN posts P 
-ON U.id = P.user_id 
-LEFT JOIN (select c.user_id, c.comment FROM comments C 
-INNER JOIN (select user_id, MAX(created_at) AS max_created_at FROM comments GROUP BY user_id) CX 
-ON C.user_id = CX.user_id AND C.created_at = CX.max_created_at) C 
-ON U.id = C.user_id 
-GROUP BY U.id, U.email, U.name, C.comment 
-ORDER BY post_count desc limit 3
+ON U.id = P.userId 
+LEFT JOIN (SELECT C.userId, C.content FROM comments C 
+INNER JOIN (SELECT userId, MAX(createdAt) AS max_created_at FROM comments GROUP BY userId) CX 
+ON C.userId = CX.userId AND C.createdAt = CX.max_created_at) C 
+ON U.id = C.userId 
+GROUP BY U.id, U.name, C.content 
+ORDER BY post_count DESC LIMIT 3
 ```
