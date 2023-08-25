@@ -32,7 +32,7 @@ export default class Users {
       await createUser(email, hashedPassword, name);
       
       const newUserDetails = await getUser(email);
-      const { id } = newUserDetails.rows[0]; 
+      const { id } = newUserDetails.rows[0];
 
       const userData = {
         user_id: id,
@@ -206,7 +206,7 @@ export default class Users {
 
 
       const passwordCheckk = await bcrypt.compare(password, hashedPassword);
-      
+
       if(!passwordCheckk) {
         return res.status(400).json({
           message: `Incorrect email or password`,
