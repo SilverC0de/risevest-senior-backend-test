@@ -47,6 +47,13 @@ router.post(
 
 router.get(
   '/:id/posts',
+  [
+    check('id')
+    .isNumeric()
+    .withMessage('User id must be numeric')
+    .trim()
+  ],
+  validateRequest,
   authenticateUserRequest,
   UsersController.allUserPosts
 );
