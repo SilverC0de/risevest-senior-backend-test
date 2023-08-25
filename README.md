@@ -35,6 +35,6 @@ LEFT JOIN (SELECT C.userId, C.content FROM comments C
 INNER JOIN (SELECT userId, MAX(createdAt) AS max_created_at FROM comments GROUP BY userId) CX 
 ON C.userId = CX.userId AND C.createdAt = CX.max_created_at) C 
 ON U.id = C.userId 
-GROUP BY U.id, U.name
+GROUP BY U.id, U.name, C.content 
 ORDER BY post_count DESC LIMIT 3
 ```
