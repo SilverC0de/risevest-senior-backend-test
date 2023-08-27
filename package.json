@@ -5,7 +5,7 @@
   "type": "commonjs",
   "main": "build/index.js",
   "scripts": {
-    "start": "npm run build && node build/src/index.js",
+    "start": "node build/src/index.js",
     "tsc": "./node_modules/typescript/bin/tsc",
     "build": "tsc",
     "postinstall": "npm run build",
