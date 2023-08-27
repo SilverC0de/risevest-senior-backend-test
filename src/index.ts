@@ -42,3 +42,5 @@ app.all('*', (req: Request, res: Response) => {
 app.listen(appPort, () => {
     console.log(`Server started on port ${appPort}!`);
 });
+
+module.exports = app;
