@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node build/index.js",
     "build": "tsc",
-    "postinstall": "npm run build && mv -i -v public build/ && rm -v -rf src",
+    "postinstall": "tsc",
     "dev": "tsc && node build/index.js",
     "test": "jest"
   },
