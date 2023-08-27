@@ -11,7 +11,7 @@ const getTop3UsersByPosts = async () => {
       ON C.user_id = CX.user_id AND C.created_at = CX.max_created_at) C 
       ON U.id = C.user_id 
       GROUP BY U.id, U.email, U.name, C.comment 
-      ORDER BY post_count DESC LIMIT 3`
+      ORDER BY post_count DESC LIMIT 3`, null
   );
 
   return result;

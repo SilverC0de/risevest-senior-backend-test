@@ -11,7 +11,7 @@ import { QueryResult } from 'pg';
 };
 
 const listUser = async () => {
-  const result: QueryResult = await db.query(`SELECT id, email, password, name, created_at FROM users LIMIT 100`);
+  const result: QueryResult = await db.query(`SELECT id, email, password, name, created_at FROM users LIMIT 100`, null);
 
   return result;
 }
