@@ -38,3 +38,5 @@ ON U.id = C.userId
 GROUP BY U.id, U.name, C.content 
 ORDER BY post_count DESC LIMIT 3
 ```
+
+## Postman documentation
