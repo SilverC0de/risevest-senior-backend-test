@@ -5,11 +5,10 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "start": "node ./build/src/index.js",
+    "start": "npm run build && node ./build/index.js",
     "dev": "nodemon -L -e ts --exec \"npm run build && npm start\"",
     "build": "tsc",
-    "test": "test",
-    "lint": "eslint . --ext .ts"
+    "test": "test"
   },
   "repository": {
     "type": "git",
