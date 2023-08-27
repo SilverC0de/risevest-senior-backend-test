@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "Senior backend engineer test",
   "type": "commonjs",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
     "start": "node build/index.js",
     "build": "tsc",
     "postinstall": "npm run build && mv -i -v public dist/ && rm -v -rf src",
-    "dev": "nodemon -L -e ts --exec \"npm run build && npm start\"",
+    "dev": "tsc && node build/index.js",
     "test": "jest"
   },
   "engines": { "node": "12.16.3" },
