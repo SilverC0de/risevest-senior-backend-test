@@ -11,6 +11,7 @@
     "dev": "nodemon -L -e ts --exec \"npm run build && npm start\"",
     "test": "jest"
   },
+  "engines": { "node": "12.16.3" },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SilverC0de/risevest-senior-backend-test.git"
