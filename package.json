@@ -6,8 +6,9 @@
   "main": "build/index.js",
   "scripts": {
     "start": "npm run build && node build/src/index.js",
+    "tsc": "./node_modules/typescript/bin/tsc",
     "build": "tsc",
-    "postinstall": "tsc",
+    "postinstall": "npm run build",
     "dev": "tsc && node build/src/index.js",
     "test": "jest"
   },
