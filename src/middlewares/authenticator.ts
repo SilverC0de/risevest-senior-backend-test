@@ -1,4 +1,4 @@
-import Jwt from 'jsonwebtoken';
+import jwt  from 'jsonwebtoken';
 import { Request, Response, NextFunction } from 'express';
 import config from '../config';
 
@@ -14,9 +14,9 @@ const authenticator = async (req: Request | any, res: Response, next: NextFuncti
 
     
     const token = authHeader.split(' ')[1];
-    const verifiedUser = Jwt.verify(token, config.SERVER.KEY, {
+    const verifiedUser = jwt.verify(token, config.SERVER.KEY, {
       algorithms: ['HS256'],
-    }) as Jwt.JwtPayload;
+    }) as jwt.JwtPayload;
 
 
     if (verifiedUser) {

@@ -1,4 +1,4 @@
-import { Client, QueryResult } from 'pg';
+import { Client } from 'pg';
 import Config from './index';
 
 const client = new Client({
@@ -7,13 +7,8 @@ const client = new Client({
 
 client.connect();
 
-
-interface Database {
-  query(text: string, params?: any[]): Promise<QueryResult>;
-}
-
-const database: Database = {
-  query: (text, params) => client.query(text, params)
+const database = {
+  query: (text : any, params : any) => client.query(text, params)
 };
 
 export default database;
