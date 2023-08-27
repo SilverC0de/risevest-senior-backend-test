@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node ./build/src/index.js",
     "dev": "nodemon -L -e ts --exec \"npm run build && npm start\"",
-    "build": "tsc ./src/index.ts",
+    "build": "tsc",
     "test": "test",
     "lint": "eslint . --ext .ts"
   },
@@ -35,7 +35,7 @@
     "@types/pg": "^8.10.2",
     "@typescript-eslint/eslint-plugin": "^6.4.1",
     "@typescript-eslint/parser": "^6.4.1",
-    "eslint": "^8.47.0",
+    "eslint": "^8.48.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-prettier": "^8.8.0",
